@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guesser</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>NUMBER <span>GUESSER</span></h1>
+      <div class="ultimate">
+      <hr /><p class="p1">ULTIMATE CHALLENGER EDITION</p><hr />
+      </div>
+    </header>
+    <main>
+      <section>
+        <form>
+          <h3>Set Range</h3>
+          <label class="input-name min-range">Min Range</label>
+          <input type="number">
+          <label class="input-name max-range">Max Range</label>
+          <input type="number" >
+          <button class="btn btn-update">Update</button>
+        </form>
+        <form>
+          <p>The Current Range is <span>1</span> to <span>100</span></p>
+          <h3>Challenger 1</h3>
+          <label class="input-name">Name</label>
+          <input type="text"> 
+          <label class="input-name">Guess</label>
+          <input type="number">
+          <h3>Challenger 2</h3>
+          <label class="input-name">Name</label>
+          <input type="text">
+          <label class="input-name">Guess</label>
+          <input type="number">
+          <button class="btn submit-btn">Submit Guess</button>
+          <button class="btn reset" disabled>Reset Game</button>
+          <button class="btn clear" disabled>Clear Game</button>
+        </form>
+        <article>
+          <h3>Latest Score</h3>
+          <div>
+            <h4>Challenger 1 Name</h4>
+            <p class="p2">current guess</p>
+            <p class="result1 res">that's too high</p>
+          </div>
+          <div>
+            <h4>Challenger 2 Name</h4>
+            <p class="p2">current guess</p>
+            <p class="result2 res">that's too low</p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <article>
+          <h5>Challenger 1 Name</h5> 
+          <p class="vs">vs</p> 
+          <h5>Challenger 2 Name</h5>
+          <p class="winner">Winner</p>
+        </article>
+      </section>
+    </main>
+    <script source="main.js"></script>
+  </body>
+</html>
