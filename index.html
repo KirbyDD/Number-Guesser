@@ -2,23 +2,26 @@
 <html>
   <head>
     <title>Number Guesser</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link href="styles.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <header>
-      <h1>NUMBER <span>GUESSER</span></h1>
-      <div class="ultimate">
-      <hr /><p class="p1">ULTIMATE CHALLENGER EDITION</p><hr />
+      <h1 class="header-style">NUMBER <span>GUESSER</span></h1>
+      <div class="ultimate header-style">
+      <hr /><p class="p1 header-style">ULTIMATE CHALLENGER EDITION</p><hr />
       </div>
     </header>
     <main>
-      <section>
+      <section class="sec1">
         <form>
           <h3>Set Range</h3>
           <label class="input-name min-range">Min Range</label>
-          <input type="number">
+          <input type="number" class="range">
           <label class="input-name max-range">Max Range</label>
-          <input type="number" >
+          <input type="number" class="range">
           <button class="btn btn-update">Update</button>
         </form>
         <form>
@@ -33,25 +36,28 @@
           <input type="text">
           <label class="input-name">Guess</label>
           <input type="number">
+          <br>
           <button class="btn submit-btn">Submit Guess</button>
           <button class="btn reset" disabled>Reset Game</button>
           <button class="btn clear" disabled>Clear Game</button>
         </form>
         <article>
           <h3>Latest Score</h3>
-          <div>
-            <h4>Challenger 1 Name</h4>
-            <p class="p2">current guess</p>
-            <p class="result1 res">that's too high</p>
-          </div>
-          <div>
-            <h4>Challenger 2 Name</h4>
-            <p class="p2">current guess</p>
-            <p class="result2 res">that's too low</p>
+          <div class="current-guess">
+            <div class="score-display">
+              <h4>Challenger 1 Name</h4>
+              <p class="p2">current guess</p>
+              <p class="result1 res">that's too high</p>
+            </div>
+            <div class="score-display">
+              <h4>Challenger 2 Name</h4>
+              <p class="p2">current guess</p>
+              <p class="result2 res">that's too low</p>
+            </div>
           </div>
         </article>
       </section>
-      <section>
+      <section class="sec2">
         <article>
           <h5>Challenger 1 Name</h5> 
           <p class="vs">vs</p> 

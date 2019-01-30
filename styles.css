@@ -1,12 +1,15 @@
+* {
+  font-family: Open Sans;
+}
 header {
   background-color: #404041;
-  text-align: center;
 }
 h1 {
   color: #DD1972;
   margin: 0px;
   padding-top: 2%;
   font-size: 40px;
+  font-family: Open Sans 700;
 }
 header span {
   font-weight: normal;
@@ -15,18 +18,60 @@ header span {
 hr {
   display: inline-block;
   width: 50px;
-
+}
+main {
+  display: flex;
+}
+form {
+  background-color: #FFFFFF;
+  border-style:  solid;
+  border-width: 1px;
+  border-color: dimgrey;
+  margin: 10px auto;
+  padding: 5px;
+  justify-content: center;
+}
+section {
+  width: 60%;
+  padding: 0 20px;
+} 
+.header-style {
+  flex-direction: column;
+  text-align: center;
+}
+.score-display {
+  width: 50%;
 }
 .ultimate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width:  53%;
   margin: 0px auto;
-
-
 }
 .p1 {
   color: #FFFFFF;
   display: inline-block;
+}
+.sec1 {
+  background-color: #F7F7F7;
+}
+.sec2 {
+  background-color: #D0D2D3;
+}
+.current-guess {
+  display: flex;
+  text-align: center;
+}
+.btn {
+  background-color: #6E6E6E;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 150px;
+  height: 20px;
+  margin-top: 15px;
+}
+:disabled {
+  background-color: #D0D2D3;
+}
+@media screen and (max-width: 660px){
+  .column {
+    width: 100%;
+  }
 }
