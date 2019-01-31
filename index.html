@@ -28,14 +28,14 @@
           <p>The Current Range is <span id="low-end">1</span> to <span id="high-end">100</span></p>
           <h3>Challenger 1</h3>
           <label class="input-name">Name</label>
-          <input type="text"> 
+          <input type="text" id="player-one-name"> 
           <label class="input-name">Guess</label>
-          <input type="number">
+          <input type="number" id="p1-input">
           <h3>Challenger 2</h3>
           <label class="input-name">Name</label>
-          <input type="text">
+          <input type="text"  id="player-two-name">
           <label class="input-name">Guess</label>
-          <input type="number">
+          <input type="number" id="p2-input">
           <br>
           <button class="btn submit-btn">Submit Guess</button>
           <button class="btn reset" disabled>Reset Game</button>
@@ -47,11 +47,13 @@
             <div class="score-display">
               <h4>Challenger 1 Name</h4>
               <p class="p2">current guess</p>
+              <p class="guess1 guess" id="player-one-guess">93</p>
               <p class="result1 res">that's too high</p>
             </div>
             <div class="score-display">
               <h4>Challenger 2 Name</h4>
               <p class="p2">current guess</p>
+              <p class="guess2 guess" id="player-two-guess">3</p>
               <p class="result2 res">that's too low</p>
             </div>
           </div>

@@ -86,6 +86,12 @@ article {
 .winner-name {
   text-transform: uppercase;
 }
+.guess{
+  font-size: 60px;
+  color: #DD1972;
+  font-weight: bold;
+  text-shadow: 2px 2px #DD1972;
+}
 :disabled {
   background-color: #D0D2D3;
 }
