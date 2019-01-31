@@ -5,8 +5,8 @@ var lowEnd = document.querySelector('#low-end');
 var highEnd = document.querySelector('#high-end');
 
 updateBtn.addEventListener('click', function(event) {
-  event.preventdefault();
   lowEnd.innerText = minRange.value;
   highEnd.innerText = maxRange.value;
+  event.preventdefault();
   })
 
