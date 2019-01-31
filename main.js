@@ -10,20 +10,22 @@ var pTwoGuessInput = document.querySelector('#p2-input');
 var pOneScoreName = document.querySelector('#p1-display-name');
 var pTwoScoreName = document.querySelector('#p2-display-name');
 var submitBtn = document.querySelector('#submitBtn');
+var pOneGuessOutput = document.querySelector('#player-one-guess');
+var pTwoGuessOutput = document.querySelector('#player-two-guess');
 
 
 updateBtn.addEventListener('click', function(event) {
-  // if(minRange.value != so && maxRange != NaN && maxRange > minRange){
-  lowEnd.innerText = minRange.value;
-  highEnd.innerText = maxRange.value;
-// } else {
-//   alert('Please correct values');
-// }
-  event.preventdefault();
-  })
-submitBtn.addEventListener('click', function(event){
-
+ if(maxRange.value<minRange.value) {
+   return;
+ }
+   lowEnd.innerText = minRange.value;
+   highEnd.innerText = maxRange.value;
+   event.preventdefault();
+ })
+submitBtn.addEventListener('click', function(guess){
+  pOneGuessInput.innerText = pOneGuessOutput.value;
 })
+
 
 
 
