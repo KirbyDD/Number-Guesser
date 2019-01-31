@@ -37,7 +37,7 @@
           <label class="input-name">Guess</label>
           <input type="number" id="p2-input">
           <br>
-          <button class="btn submit-btn">Submit Guess</button>
+          <button class="btn submit-btn" id="submit-btn">Submit Guess</button>
           <button class="btn reset" disabled>Reset Game</button>
           <button class="btn clear" disabled>Clear Game</button>
         </form>
@@ -45,13 +45,13 @@
           <h3>Latest Score</h3>
           <div class="current-guess">
             <div class="score-display">
-              <h4>Challenger 1 Name</h4>
+              <h4 id="p1-display-name">Challenger 1 Name</h4>
               <p class="p2">current guess</p>
               <p class="guess1 guess" id="player-one-guess">93</p>
               <p class="result1 res">that's too high</p>
             </div>
             <div class="score-display">
-              <h4>Challenger 2 Name</h4>
+              <h4 id="p2-display-name">Challenger 2 Name</h4>
               <p class="p2">current guess</p>
               <p class="guess2 guess" id="player-two-guess">3</p>
               <p class="result2 res">that's too low</p>

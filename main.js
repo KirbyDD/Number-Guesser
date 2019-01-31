@@ -7,7 +7,9 @@ var pOneName = document.querySelector('#player-one-name');
 var pTwoName = document.querySelector('#player-two-name');
 var pOneGuessInput = document.querySelector('#p1-input');
 var pTwoGuessInput = document.querySelector('#p2-input');
-
+var pOneScoreName = document.querySelector('#p1-display-name');
+var pTwoScoreName = document.querySelector('#p2-display-name');
+var submitBtn = document.querySelector('#submitBtn');
 
 
 updateBtn.addEventListener('click', function(event) {
@@ -19,4 +21,9 @@ updateBtn.addEventListener('click', function(event) {
 // }
   event.preventdefault();
   })
+submitBtn.addEventListener('click', function(event){
+
+})
+
+
 
