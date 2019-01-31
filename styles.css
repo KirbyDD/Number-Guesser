@@ -26,7 +26,7 @@ form {
   background-color: #FFFFFF;
   border-style:  solid;
   border-width: 1px;
-  border-color: dimgrey;
+  border-color: #adacad;
   margin: 10px auto;
   padding: 5px;
   justify-content: center;
@@ -37,6 +37,19 @@ section {
 } 
 input:focus {
   outline: none;
+  border-color: #DD1972;
+  padding: 2px;
+}
+button:hover {
+  background-color: #DD1972;
+}
+article {
+  border-color: #adacad;
+  border-style: solid;
+  border-width: 1px;
+  margin: 10px auto;
+  padding: 5px;
+
 }
 .header-style {
   flex-direction: column;
@@ -69,6 +82,9 @@ input:focus {
   width: 150px;
   height: 20px;
   margin-top: 15px;
+}
+.winner-name {
+  text-transform: uppercase;
 }
 :disabled {
   background-color: #D0D2D3;
