@@ -35,6 +35,9 @@ section {
   width: 60%;
   padding: 0 20px;
 } 
+input:focus {
+  outline: none;
+}
 .header-style {
   flex-direction: column;
   text-align: center;
