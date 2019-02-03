@@ -23,7 +23,6 @@ hr {
 }
 main {
   display: flex;
-
 }
 form {
   background-color: #FFFFFF;
@@ -72,15 +71,27 @@ article {
   background-color: #F7F7F7;
 }
 .input-name {
-  display: inline-block;
+  display: block;
 }  
+.name-spacing {
+  margin-right: 10px;
+}
+.input-guess {
+  width: 150px;
+}
 .flex-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
 .left-user-input {
-  padding-right: 25px;
+  padding-right: 20px;
+}
+.flex-wrapper-two {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .range {
   width: 150px;
@@ -98,7 +109,7 @@ article {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100vh;
+  height: 117vh;
 }
 .sec2 {
   background-color: #D0D2D3;
@@ -135,6 +146,11 @@ article {
   font-weight: bold;
   text-shadow: 1px 1px #DD1972;
 }
+.reset-btn {
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
 :disabled {
   background-color: #D0D2D3;
 }
@@ -148,7 +164,6 @@ article {
     width: 100%;
     margin: 0 auto;
   }
-
 }
 /*Small Screens*/
 @media screen and (max-width: 503px){
@@ -159,19 +174,22 @@ article {
   form {
     width: 100%;
     margin: 0 auto;
-  }
+  } 
   main {
     display: flex;
     flex-direction: column;
-
+    margin: 0 auto;
+    width: 100%;
+  }
+  .flex-wrapper {
+    width: 100%;
   }
   .sec1 {
     width: 100%;
     margin: 0 auto;
-
   }
   .sec2 {
-    margin: 0 auto
+    margin: 0 auto;
     width: 100%;
     order: 2;
   }
