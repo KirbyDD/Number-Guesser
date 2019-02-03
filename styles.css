@@ -77,14 +77,13 @@ article {
 .flex-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-
+  justify-content: flex-start;
 }
-.max-range {
-  align-self: ;
+.left-user-input {
+  padding-right: 25px;
 }
 .range {
-  width: 100px;
+  width: 150px;
   display: block;
 }
 .ultimate {
@@ -98,12 +97,17 @@ article {
   background-color: #F7F7F7;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
+  width: 80%;
   height: 100vh;
 }
 .sec2 {
   background-color: #D0D2D3;
-  width: 60%;
+  width: 100%;
+}
+.score-display-left {
+  border-right: solid;
+  border-color: #adacad;
+  border-width: 1px;
 }
 .current-guess {
   display: flex;
@@ -121,7 +125,6 @@ article {
 .btn-update {
   width: 120px;
   margin-left: 10px;
-
 }
 .winner-name {
   text-transform: uppercase;
