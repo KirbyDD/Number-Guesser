@@ -17,14 +17,18 @@
     <main>
       <section class="sec1">
         <form class="form-style">
-          <fieldset class="fieldset-style">
-          <h3>Set Range</h3>
-          <label class="input-name min-range" for="min-range">Min Range</label>
-          <input type="number" class="range" id="min-range">
-          <label class="input-name max-range" for="max-range">Max Range</label>
-          <input type="number" class="range" id="max-range">
+          <h3 class="set-range">Set Range</h3>
+          <div class="flex-wrapper">
+            <div class="left-user-input">
+              <label class="input-name min-range" for="min-range">Min Range</label>
+              <input type="number" class="range range-style-1" id="min-range">  
+            </div>
+            <div>
+              <label class="input-name max-range" for="max-range">Max Range</label>
+              <input type="number" class="range range-style-2" id="max-range">
+            </div>
           <button class="btn btn-update" type="button">Update</button>
-          </fieldset>
+          </div>
         </form>
         <form>
           <p>The Current Range is <span id="low-end">1</span> to <span id="high-end">100</span></p>
