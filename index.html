@@ -11,50 +11,67 @@
     <header>
       <h1 class="header-style">NUMBER <span>GUESSER</span></h1>
       <div class="ultimate header-style">
-      <hr /><p class="p1 header-style">ULTIMATE CHALLENGER EDITION</p><hr />
+      <hr class="hr-left"><p class="p1 header-style">ULTIMATE CHALLENGER EDITION</p><hr class="hr-right">
       </div>
     </header>
     <main>
       <section class="sec1">
-        <form>
-          <h3>Set Range</h3>
-          <label class="input-name min-range">Min Range</label>
-          <input type="number" class="range" id="min-range">
-          <label class="input-name max-range">Max Range</label>
-          <input type="number" class="range" id="max-range">
+        <form class="form-style">
+          <h3 class="set-range">Set Range</h3>
+          <div class="flex-wrapper">
+            <div class="left-user-input">
+              <label class="min-range" for="min-range">Min Range</label>
+              <input type="number" class="range range-style-1" id="min-range">
+            </div>
+            <div class="left-user-input">
+              <label class="max-range" for="max-range">Max Range</label>
+              <input type="number" class="range range-style-2" id="max-range">
+            </div>
           <button class="btn btn-update" type="button">Update</button>
+          </div>
         </form>
         <form>
           <p>The Current Range is <span id="low-end">1</span> to <span id="high-end">100</span></p>
           <h3>Challenger 1</h3>
-          <label class="input-name">Name</label>
-          <input type="text" id="player-one-name"> 
-          <label class="input-name">Guess</label>
-          <input type="number" id="p1-input">
+          <div class="flex-wrapper-two">
+            <div class="left-name-input">
+              <label class="input-name" for="player-one-name">Name</label>
+              <input type="text" id="player-one-name" class="input-name name-spacing">   
+            </div>
+            <div  class="">
+              <label class="input-name" for="p1-input">Guess</label>
+              <input type="number" id="p1-input" class="input-name">
+            </div>
+          </div>
           <h3>Challenger 2</h3>
-          <label class="input-name">Name</label>
-          <input type="text"  id="player-two-name">
-          <label class="input-name">Guess</label>
-          <input type="number" id="p2-input">
-          <br>
-          <button class="btn submit-btn" id="submit-btn">Submit Guess</button>
-          <button class="btn reset" disabled>Reset Game</button>
-          <button class="btn clear" disabled>Clear Game</button>
+          <div class="flex-wrapper-two">
+            <div class="left-name-input">
+              <label class="input-name" for="player-two-name">Name</label>
+              <input type="text"  id="player-two-name" class="input-name name-spacing">
+           </div>
+            <div class="">
+              <label class="input-name" for="p2-input">Guess</label>
+              <input type="number" id="p2-input" class="input-name">
+            </div>
+          </div>
+            <button class="btn submit-btn" id="submit-btn">Submit Guess</button>
+            <button class="btn reset-btn" disabled>Reset Game</button>
+            <button class="btn" disabled>Clear Game</button>
         </form>
         <article>
           <h3>Latest Score</h3>
           <div class="current-guess">
-            <div class="score-display">
+            <div class="score-display score-display-left">
               <h4 id="p1-display-name">Challenger 1 Name</h4>
               <p class="p2">current guess</p>
               <p class="guess1 guess" id="player-one-guess">93</p>
-              <p class="result1 res">that's too high</p>
+              <p class="result1 res" id="js-results">that's too high</p>
             </div>
             <div class="score-display">
               <h4 id="p2-display-name">Challenger 2 Name</h4>
               <p class="p2">current guess</p>
               <p class="guess2 guess" id="player-two-guess">3</p>
-              <p class="result2 res">that's too low</p>
+              <p class="result2 res" id="js-results">that's too low</p>
             </div>
           </div>
         </article>
