@@ -17,8 +17,8 @@ var p2Results = document.querySelector('#js2-results')
 var randNumber;
 
 updateBtn.addEventListener('click', function(minNum, maxNum){
-  minNum = Math.ceil(minRange.value);
-  maxNum = Math.floor(maxRange.value);
+  minNum = Math.floor(minRange.value);
+  maxNum = Math.ceil(maxRange.value);
   randNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
   return randNumber;
   event.preventDefault();
