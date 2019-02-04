@@ -25,7 +25,7 @@ updateBtn.addEventListener('click', function(minNum, maxNum){
 })
 
 updateBtn.addEventListener('click', function(event) {
- if(maxRange.value<minRange.value) {
+ if(parseInt(maxRange.value<minRange.value)) {
    return;
  }
    lowEnd.innerText = minRange.value;
@@ -58,6 +58,10 @@ submitBtn.addEventListener('click', function(guess) {
     }
   event.preventDefault();
 })
+
+function enableButtons(){
+  
+}
 
 
 
