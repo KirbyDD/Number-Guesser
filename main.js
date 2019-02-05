@@ -22,7 +22,6 @@ gameStart();
 randGen();
 
 function gameStart(){
-  debugger
   minRange.value = 1;
   maxRange.value = 100;
 }
@@ -51,11 +50,10 @@ guessForm.addEventListener('keyup', function(){
 
 resetBtn.addEventListener('click', function(event) {
   randGen()
-  
+  pOneGuessInput.value = "";
+  pTwoGuessInput.value = "";
   event.preventDefault();
-
-
-  
+  resetBtn.addAttribute('disabled');
 })
 submitBtn.addEventListener('click', function(guess) {
   pOneGuessOutput.innerText = pOneGuessInput.value;
