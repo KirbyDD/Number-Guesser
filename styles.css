@@ -165,7 +165,7 @@ article {
     margin: 0 auto;
   }
 }
-/*Small Screens*/
+/*iPad Screens*/
 @media screen and (max-width: 503px){
     section {
     width: 100%;
