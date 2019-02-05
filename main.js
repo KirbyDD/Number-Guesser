@@ -17,12 +17,12 @@ var p2Results = document.querySelector('#js2-results');
 var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
+var clearBtn = document.querySelector('#js-clear-btn')
 
 gameStart();
 randGen();
 
 function gameStart(){
-  debugger
   minRange.value = 1;
   maxRange.value = 100;
 }
@@ -83,9 +83,25 @@ submitBtn.addEventListener('click', function(guess) {
   event.preventDefault();
 })
 
-function enableButtons(){
-  
-}
+guessForm.addEventListener('keyup', function(){ 
+  clearBtn.removeAttribute('disabled');
+})
+
+clearBtn.addEventListener('click', function(){
+  pOneName.value = '';
+  pTwoName.value = '';
+  pOneGuessInput.value = '';
+  pTwoGuessInput.value = '';
+  pOneGuessOutput.innerText = '-';
+  pTwoGuessOutput.innerText = '-';
+  pOneScoreName.innerText = 'Challenger 1';
+  pTwoScoreName.innerText = 'Challenger 2';
+  p1Results.innerText = 'No guess made';
+  p2Results.innerText = 'No guess made';
+  event.preventDefault();
+  clearBtn.setAttribute('disabled', true);
+})
+
 
 
 
