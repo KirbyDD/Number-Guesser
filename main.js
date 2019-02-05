@@ -12,27 +12,51 @@ var pTwoScoreName = document.querySelector('#p2-display-name');
 var submitBtn = document.querySelector('#submit-btn');
 var pOneGuessOutput = document.querySelector('#player-one-guess');
 var pTwoGuessOutput = document.querySelector('#player-two-guess');
-var p1Results = document.querySelector('#js1-results')
-var p2Results = document.querySelector('#js2-results')
+var p1Results = document.querySelector('#js1-results');
+var p2Results = document.querySelector('#js2-results');
 var randNumber;
+var resetBtn = document.querySelector('#reset-btn');
+var guessForm = document.querySelector('#guess-form');
 
-updateBtn.addEventListener('click', function(minNum, maxNum){
+gameStart();
+randGen();
+
+function gameStart(){
+  debugger
+  minRange.value = 1;
+  maxRange.value = 100;
+}
+
+
+function randGen(){
   minNum = Math.floor(minRange.value);
   maxNum = Math.ceil(maxRange.value);
   randNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
   return randNumber;
-  event.preventDefault();
-})
-
+}
 updateBtn.addEventListener('click', function(event) {
+
  if(parseInt(maxRange.value<minRange.value)) {
    return;
  }
    lowEnd.innerText = minRange.value;
    highEnd.innerText = maxRange.value;
+   randGen();
    event.preventDefault();
  })
 
+guessForm.addEventListener('keyup', function(){
+  resetBtn.removeAttribute('disabled');
+})
+
+resetBtn.addEventListener('click', function(event) {
+  randGen()
+  
+  event.preventDefault();
+
+
+  
+})
 submitBtn.addEventListener('click', function(guess) {
   pOneGuessOutput.innerText = pOneGuessInput.value;
   pOneScoreName.innerText = pOneName.value;
