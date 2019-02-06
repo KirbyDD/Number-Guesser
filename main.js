@@ -27,7 +27,6 @@ function gameStart(){
   maxRange.value = 100;
 }
 
-
 function randGen(){
   minNum = Math.floor(minRange.value);
   maxNum = Math.ceil(maxRange.value);
