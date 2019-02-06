@@ -53,7 +53,7 @@ function minCheck() {
 
 function checkUpdBtn () {
   if (minRange.value == "" || maxRange.value == "") {
-    alert('Plese fill Min and Max fields');
+    alert('Please fill min and max fields');
   } else { 
     minCheck();
   }
@@ -79,6 +79,7 @@ resetBtn.addEventListener('click', function(event) {
   resetBtn.disabled = true;
 })
 
+
 submitBtn.addEventListener('click', function(event) {
   outsideRange(event);
   if (pOneGuessInput.value > randNumber) {
@@ -97,6 +98,7 @@ submitBtn.addEventListener('click', function(event) {
   } else {
     p2Results.innerText = "BOOM!";
   }
+
   event.preventDefault();
 })
 
@@ -119,6 +121,7 @@ clearBtn.addEventListener('click', function(){
   clearBtn.disabled = true ;
 })
 
+
 function outsideRange(event){
   var guess1 = parseInt(pOneGuessInput.value);
   var guess2 = parseInt(pTwoGuessInput.value);
@@ -136,7 +139,7 @@ function outsideRange(event){
     alert('Please fill all required fields');
   } else{
     assignOutput();
-  }
+}
 
  function assignOutput(){
     pOneGuessOutput.innerText = pOneGuessInput.value;
@@ -145,3 +148,4 @@ function outsideRange(event){
     pTwoScoreName.innerText = pTwoName.value;
   }
 }
+
