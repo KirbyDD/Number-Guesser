@@ -19,6 +19,7 @@ var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
 var invalidChar = ['+', '-', 'e'];
+var winnerName 
 
 gameStart();
 randGen();
@@ -46,8 +47,6 @@ function invalidInput(event){
     }
 };
 
-updateBtn.addEventListener('click', function(event) {
-
 function minCheck() {
   if (minRange.value >= maxRange.value) {
     alert('Please update range to meet 2nd grade math abilities');
@@ -61,7 +60,7 @@ function checkSubBtn() {
 }
 function checkUpdBtn () {
   if (minRange.value == "" || maxRange.value == "") {
-    alert('Plese fill Min and Max fields');
+    alert('Please fill min and max fields');
   } else { 
     minCheck();
   }
@@ -87,6 +86,7 @@ resetBtn.addEventListener('click', function(event) {
 })
 submitBtn.addEventListener('click', function(guess) {
   outsideRange();
+  checkSubBtn();
     if (pOneGuessInput.value > randNumber) {
       p1Results.innerText = 'That\'s too high!';
     } else if (pOneGuessInput.value < randNumber) {
@@ -106,6 +106,7 @@ submitBtn.addEventListener('click', function(guess) {
       p2Results.innerText = 'That\'s too low!';
     } else {
       p2Results.innerText = "BOOM!";
+
     }
   event.preventDefault();
 })
@@ -129,7 +130,7 @@ clearBtn.addEventListener('click', function(){
   clearBtn.disabled = true ;
 })
 
-function outsideRange(){
+function outsideRange() {
   if(parseInt(pOneGuessInput.value) < parseInt(minRange.value)){
     event.preventDefault();
   } else {
@@ -137,9 +138,3 @@ function outsideRange(){
     pOneScoreName.innerText = pOneName.value;
   }
 }
-
-
-
-
-
-
