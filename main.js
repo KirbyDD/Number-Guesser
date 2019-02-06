@@ -34,16 +34,32 @@ function randGen(){
   randNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
   return randNumber;
 }
-updateBtn.addEventListener('click', function(event) {
 
- if(parseInt(maxRange.value<minRange.value)) {
-   return;
- }
-   lowEnd.innerText = minRange.value;
-   highEnd.innerText = maxRange.value;
-   randGen();
-   event.preventDefault();
- })
+function minCheck() {
+  if (minRange.value >= maxRange.value) {
+    alert('Please update range to meet math');
+    gameStart();
+  }
+}
+function checkSubBtn() {
+  if (pOneGuessInput.value == "" || pTwoGuessInput.value == "" || minRange.value == "" || maxRange.value == "" || pOneName == "" || pTwoName == "") {
+    alert('Please fill all required fields');
+  }
+}
+function checkUpdBtn () {
+  if (minRange.value == "" || maxRange.value == "") {
+    alert('Plese fill Min and Max fields');
+  } else { 
+    minCheck();
+  }
+}
+updateBtn.addEventListener('click', function(event) {
+  checkUpdBtn();
+  lowEnd.innerText = minRange.value;
+  highEnd.innerText = maxRange.value;
+  randGen();
+  event.preventDefault();
+});
 
 guessForm.addEventListener('keyup', function(){
   resetBtn.removeAttribute('disabled');
@@ -57,6 +73,7 @@ resetBtn.addEventListener('click', function(event) {
   resetBtn.addAttribute('disabled');
 })
 submitBtn.addEventListener('click', function(guess) {
+  checkSubBtn();
   pOneGuessOutput.innerText = pOneGuessInput.value;
   pOneScoreName.innerText = pOneName.value;
     if (pOneGuessInput.value > randNumber) {
