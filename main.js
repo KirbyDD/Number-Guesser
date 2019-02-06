@@ -17,7 +17,8 @@ var p2Results = document.querySelector('#js2-results');
 var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
-var clearBtn = document.querySelector('#js-clear-btn')
+var clearBtn = document.querySelector('#js-clear-btn');
+var invalidChar = ['+', '-', 'e'];
 
 gameStart();
 randGen();
@@ -33,6 +34,19 @@ function randGen(){
   randNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
   return randNumber;
 }
+
+
+minRange.addEventListener('keydown', invalidInput);
+maxRange.addEventListener('keydown', invalidInput);
+
+function invalidInput(event){
+  if (event.keyCode === 69 || event.keyCode === 187 || event.keyCode === 189)
+    {
+        event.preventDefault();
+    }
+};
+
+updateBtn.addEventListener('click', function(event) {
 
 function minCheck() {
   if (minRange.value >= maxRange.value) {
@@ -72,10 +86,8 @@ resetBtn.addEventListener('click', function(event) {
   resetBtn.disabled = true;
 })
 submitBtn.addEventListener('click', function(guess) {
-  checkSubBtn();
-  pOneGuessOutput.innerText = pOneGuessInput.value;
-  pOneScoreName.innerText = pOneName.value;
-      if (pOneGuessInput.value > randNumber) {
+  outsideRange();
+    if (pOneGuessInput.value > randNumber) {
       p1Results.innerText = 'That\'s too high!';
     } else if (pOneGuessInput.value < randNumber) {
       p1Results.innerText = 'That\'s too low!';
@@ -99,7 +111,7 @@ submitBtn.addEventListener('click', function(guess) {
 })
 
 guessForm.addEventListener('keyup', function(){ 
-  clearBtn.removeAttribute('disabled');
+  clearBtn.disabled = false;
 })
 
 clearBtn.addEventListener('click', function(){
@@ -117,6 +129,14 @@ clearBtn.addEventListener('click', function(){
   clearBtn.disabled = true ;
 })
 
+function outsideRange(){
+  if(parseInt(pOneGuessInput.value) < parseInt(minRange.value)){
+    event.preventDefault();
+  } else {
+    pOneGuessOutput.innerText = pOneGuessInput.value;
+    pOneScoreName.innerText = pOneName.value;
+  }
+}
 
 
 
