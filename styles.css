@@ -1,9 +1,11 @@
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
 header {
   background-color: #404041;
 }
+
 h1 {
   color: #DD1972;
   margin: 0px;
@@ -11,19 +13,24 @@ h1 {
   font-size: 40px;
   font-family: Open Sans 700;
 }
+
 h3  {
   color: #6E6E6E;
 }
+
 header span {
   font-weight: normal;
 }
+
 hr {
   display: inline-block;
   width: 40px;
 }
+
 main {
   display: flex;
 }
+
 form {
   background-color: #FFFFFF;
   border-style:  solid;
@@ -32,20 +39,25 @@ form {
   margin: 10px auto;
   padding: 10px;
 }
+
 fieldset {
   border: 0;
 }
+
 section {
   padding: 0 20px;
 } 
+
 input:focus {
   outline: none;
   border-color: #DD1972;
   padding: 2px;
 }
+
 button:hover {
   background-color: #DD1972;
 }
+
 article {
   border-color: #adacad;
   border-style: solid;
@@ -53,41 +65,52 @@ article {
   margin: 10px auto;
   padding: 5px;
 }
+
 .header-style {
   flex-direction: column;
   text-align: center;
 }
+
 .set-range {
   margin-top: 10px;
 }
+
 .hr-left {
   margin-right: 10px;
 }
+
 .hr-right {
   margin-left: 10px;
 }
+
 .score-display {
   width: 50%;
   background-color: #F7F7F7;
 }
+
 .input-name {
   display: block;
 }  
+
 .name-spacing {
   margin-right: 10px;
 }
+
 .input-guess {
   width: 150px;
 }
+
 .flex-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .left-user-input {
   padding-right: 20px;
 }
+
 .flex-wrapper-two {
   display: flex;
   flex-direction: row;

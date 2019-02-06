@@ -36,7 +36,7 @@ function randGen(){
 
 function minCheck() {
   if (minRange.value >= maxRange.value) {
-    alert('Please update range to meet math');
+    alert('Please update range to meet 2nd grade math abilities');
     gameStart();
   }
 }
@@ -65,17 +65,17 @@ guessForm.addEventListener('keyup', function(){
 })
 
 resetBtn.addEventListener('click', function(event) {
-  randGen()
+  randGen();
   pOneGuessInput.value = "";
   pTwoGuessInput.value = "";
   event.preventDefault();
-  resetBtn.addAttribute('disabled');
+  resetBtn.disabled = true;
 })
 submitBtn.addEventListener('click', function(guess) {
   checkSubBtn();
   pOneGuessOutput.innerText = pOneGuessInput.value;
   pOneScoreName.innerText = pOneName.value;
-    if (pOneGuessInput.value > randNumber) {
+      if (pOneGuessInput.value > randNumber) {
       p1Results.innerText = 'That\'s too high!';
     } else if (pOneGuessInput.value < randNumber) {
       p1Results.innerText = 'That\'s too low!';
@@ -114,7 +114,7 @@ clearBtn.addEventListener('click', function(){
   p1Results.innerText = 'No guess made';
   p2Results.innerText = 'No guess made';
   event.preventDefault();
-  clearBtn.setAttribute('disabled', true);
+  clearBtn.disabled = true ;
 })
 
 
