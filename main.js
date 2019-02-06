@@ -28,13 +28,13 @@ function gameStart(){
   maxRange.value = 100;
 }
 
-
 function randGen(){
   minNum = Math.floor(minRange.value);
   maxNum = Math.ceil(maxRange.value);
   randNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
   return randNumber;
 }
+
 
 minRange.addEventListener('keydown', invalidInput);
 maxRange.addEventListener('keydown', invalidInput);
@@ -48,21 +48,38 @@ function invalidInput(event){
 
 updateBtn.addEventListener('click', function(event) {
 
- if(parseInt(maxRange.value<minRange.value)) {
-   return;
- }
-   lowEnd.innerText = minRange.value;
-   highEnd.innerText = maxRange.value;
-   randGen();
-   event.preventDefault();
- })
+function minCheck() {
+  if (minRange.value >= maxRange.value) {
+    alert('Please update range to meet 2nd grade math abilities');
+    gameStart();
+  }
+}
+function checkSubBtn() {
+  if (pOneGuessInput.value == "" || pTwoGuessInput.value == "" || minRange.value == "" || maxRange.value == "" || pOneName == "" || pTwoName == "") {
+    alert('Please fill all required fields');
+  }
+}
+function checkUpdBtn () {
+  if (minRange.value == "" || maxRange.value == "") {
+    alert('Plese fill Min and Max fields');
+  } else { 
+    minCheck();
+  }
+}
+updateBtn.addEventListener('click', function(event) {
+  checkUpdBtn();
+  lowEnd.innerText = minRange.value;
+  highEnd.innerText = maxRange.value;
+  randGen();
+  event.preventDefault();
+});
 
 guessForm.addEventListener('keyup', function(){
   resetBtn.removeAttribute('disabled');
 })
 
 resetBtn.addEventListener('click', function(event) {
-  randGen()
+  randGen();
   pOneGuessInput.value = "";
   pTwoGuessInput.value = "";
   event.preventDefault();
@@ -109,7 +126,7 @@ clearBtn.addEventListener('click', function(){
   p1Results.innerText = 'No guess made';
   p2Results.innerText = 'No guess made';
   event.preventDefault();
-  clearBtn.setAttribute('disabled', true);
+  clearBtn.disabled = true ;
 })
 
 function outsideRange(){
