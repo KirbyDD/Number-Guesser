@@ -18,10 +18,12 @@ var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
-var invalidChar = ['+', '-', 'e'];
 
 gameStart();
 randGen();
+
+minRange.addEventListener('keydown', invalidInput);
+maxRange.addEventListener('keydown', invalidInput);
 
 function gameStart(){
   minRange.value = 1;
@@ -35,30 +37,20 @@ function randGen(){
   return randNumber;
 }
 
-
-minRange.addEventListener('keydown', invalidInput);
-maxRange.addEventListener('keydown', invalidInput);
-
 function invalidInput(event){
-  if (event.keyCode === 69 || event.keyCode === 187 || event.keyCode === 189)
+  if (event.keyCode === 69 || event.keyCode === 187)
     {
         event.preventDefault();
     }
 };
 
-updateBtn.addEventListener('click', function(event) {
-
 function minCheck() {
-  if (minRange.value >= maxRange.value) {
+  if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
     alert('Please update range to meet 2nd grade math abilities');
     gameStart();
   }
 }
-function checkSubBtn() {
-  if (pOneGuessInput.value == "" || pTwoGuessInput.value == "" || minRange.value == "" || maxRange.value == "" || pOneName == "" || pTwoName == "") {
-    alert('Please fill all required fields');
-  }
-}
+
 function checkUpdBtn () {
   if (minRange.value == "" || maxRange.value == "") {
     alert('Plese fill Min and Max fields');
@@ -66,6 +58,7 @@ function checkUpdBtn () {
     minCheck();
   }
 }
+
 updateBtn.addEventListener('click', function(event) {
   checkUpdBtn();
   lowEnd.innerText = minRange.value;
@@ -85,28 +78,25 @@ resetBtn.addEventListener('click', function(event) {
   event.preventDefault();
   resetBtn.disabled = true;
 })
-submitBtn.addEventListener('click', function(guess) {
-  outsideRange();
-    if (pOneGuessInput.value > randNumber) {
-      p1Results.innerText = 'That\'s too high!';
-    } else if (pOneGuessInput.value < randNumber) {
-      p1Results.innerText = 'That\'s too low!';
-    } else {
-      p1Results.innerText = "BOOM!";
-    }
-  event.preventDefault();
-})
 
-submitBtn.addEventListener('click', function(guess) {
-  pTwoGuessOutput.innerText = pTwoGuessInput.value;
-  pTwoScoreName.innerText = pTwoName.value;
+submitBtn.addEventListener('click', function(event) {
+  outsideRange(event);
+  if (pOneGuessInput.value > randNumber) {
+    p1Results.innerText = 'That\'s too high!';
+  } else if (pOneGuessInput.value < randNumber) {
+    p1Results.innerText = 'That\'s too low!';
+  } else {
+    p1Results.innerText = "BOOM!";
+  }
+  event.preventDefault();
+
   if (pTwoGuessInput.value > randNumber) {
-      p2Results.innerText = 'That\'s too high!';
-    } else if (pTwoGuessInput.value < randNumber) {
-      p2Results.innerText = 'That\'s too low!';
-    } else {
-      p2Results.innerText = "BOOM!";
-    }
+    p2Results.innerText = 'That\'s too high!';
+  } else if (pTwoGuessInput.value < randNumber) {
+    p2Results.innerText = 'That\'s too low!';
+  } else {
+    p2Results.innerText = "BOOM!";
+  }
   event.preventDefault();
 })
 
@@ -129,17 +119,29 @@ clearBtn.addEventListener('click', function(){
   clearBtn.disabled = true ;
 })
 
-function outsideRange(){
-  if(parseInt(pOneGuessInput.value) < parseInt(minRange.value)){
+function outsideRange(event){
+  var guess1 = parseInt(pOneGuessInput.value);
+  var guess2 = parseInt(pTwoGuessInput.value);
+  var min = parseInt(minRange.value);
+  var max = parseInt(maxRange.value);
+  if(guess1 < min || guess1 > max || guess2 < min || guess2 > max){
+    alert('Please make sure guesses are within range!')
     event.preventDefault();
-  } else {
+  } else{
+    assignOutput();
+  }
+  if (pOneGuessInput.value == "" || pTwoGuessInput.value == "" || minRange.value == "" 
+    || maxRange.value == "" || pOneName.value == "" || pTwoName.value == "") {
+    event.preventDefault();
+    alert('Please fill all required fields');
+  } else{
+    assignOutput();
+  }
+
+ function assignOutput(){
     pOneGuessOutput.innerText = pOneGuessInput.value;
     pOneScoreName.innerText = pOneName.value;
+    pTwoGuessOutput.innerText = pTwoGuessInput.value;
+    pTwoScoreName.innerText = pTwoName.value;
   }
 }
-
-
-
-
-
-
