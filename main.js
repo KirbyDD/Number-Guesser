@@ -221,5 +221,5 @@ function deleteCard(event){
 }
 
 function addGuess(){
-  guessCount += 1;
+  guessCount += 2;
 }
