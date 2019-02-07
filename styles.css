@@ -282,21 +282,39 @@ article {
   background-color: #D0D2D3;
 }
 /*Medium Screens*/
-@media screen and (max-width: 989px){
+@media screen and (max-width: 1025px){
   section {
     width: 100%;
     margin: 0 auto;
   }
+  
   form {
     width: 100%;
     margin: 0 auto;
   }
+
+  .btn {
+    width: 100%;
+  }
+
 }
 /*iPad Screens*/
 @media screen and (max-width: 503px){
-    section {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  section {
     width: 100%;
     margin: 0 auto;
+  }
+
+  article {
+    padding: 0;
   }
 
   form {
@@ -304,11 +322,16 @@ article {
     margin: 0 auto;
   } 
 
-  main {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  .ultimate {
+    font-size: .75em;
+  }
+
+  header {
     width: 100%;
+  }
+
+  input{
+    border: 1px solid lightgrey;
   }
 
   .flex-wrapper {
@@ -318,11 +341,16 @@ article {
   .sec1 {
     width: 100%;
     margin: 0 auto;
+    padding: 0;
   }
 
   .sec2 {
     margin: 0 auto;
     width: 100%;
+    padding: 0;
     order: 2;
   }
-}*/
+  
+  .btn-update{
+    width:auto;
+  }

@@ -18,7 +18,15 @@ var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
+var enterMin = document.querySelector('#min-range-error');
+var enterMax = document.querySelector('#max-range-error');
+var showMe = document.querySelector('.show-me');
+var enterP1Name = document.querySelector('#p1-name-error');
+var enterP1Guess = document.querySelector('#p1-guess-error');
+var enterP2Name = document.querySelector('#p2-name-error');
+var enterP2Guess = document.querySelector('#p2-guess-error');
 var guessCount = 0;
+
 
 
 gameStart();
@@ -52,14 +60,6 @@ function minCheck() {
     gameStart();
   }
 }
-  var enterMin = document.querySelector('#min-range-error');
-  var enterMax = document.querySelector('#max-range-error');
-  var showMe = document.querySelector('.show-me');
-  var enterP1Name = document.querySelector('#p1-name-error');
-  var enterP1Guess = document.querySelector('#p1-guess-error');
-  var enterP2Name = document.querySelector('#p2-name-error');
-  var enterP2Guess = document.querySelector('#p2-guess-error');
-debugger;
 
 function checkEmptyMin(){
   if (minRange.value == "" ) {
@@ -123,8 +123,8 @@ guessForm.addEventListener('keyup', function(){
 
 resetBtn.addEventListener('click', function(event) {
   randGen();
-  !pOneGuessInput.value;
-  !pTwoGuessInput.value;
+  pOneGuessInput.value = '';
+  pTwoGuessInput.value = '';
   event.preventDefault();
   resetBtn.disabled = true;
 })
@@ -166,10 +166,10 @@ guessForm.addEventListener('keyup', function(){
 })
 
 clearBtn.addEventListener('click', function(){
-  pOneName.value == '';
-  pTwoName.value == '' ;
-  pOneGuessInput.value == '';
-  pTwoGuessInput.value == '';
+  pOneName.value = '';
+  pTwoName.value = '';
+  pOneGuessInput.value = '';
+  pTwoGuessInput.value = '';
   pOneGuessOutput.innerText = '-';
   pTwoGuessOutput.innerText = '-';
   pOneScoreName.innerText = 'Challenger 1';
@@ -223,7 +223,7 @@ function createCardOne(){
             <p class="winner-name">Winner</p> 
           </div>
           <div class="score-box-bot">
-            <p class="score-bot-style"><span class="span-spacing" id="guess-count">43</span>Guesses</p>
+            <p class="score-bot-style"><span class="span-spacing" id="guess-count">${guessCount}</span>Guesses</p>
             <p class="score-bot-style score-bot-style2"><span class="span-spacing" id="time">1.5</span>Minutes</p>
             <i class="fas fa-times-circle"></i>
           </div>
