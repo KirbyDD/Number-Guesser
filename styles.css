@@ -58,6 +58,10 @@ button:hover {
   background-color: #DD1972;
 }
 
+button:focus {
+  outline: none;
+}
+
 article {
   border-color: #adacad;
   border-style: solid;
@@ -65,10 +69,6 @@ article {
   margin: 10px auto;
   padding: 5px;
   background-color: #F7F7F7;
-}
-
-span {
-  margin-left: 15px;
 }
 
 .header-style {
@@ -83,6 +83,20 @@ span {
 .underline {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.error {
+  color: #DD1972;
+  margin: 1px auto;
+  visibility: hidden;
+}
+
+.show-me {
+  visibility: visible;
+}
+
+.fa-exclamation-triangle {
+  margin-right: 5px;
 }
 
 .hr-left {
