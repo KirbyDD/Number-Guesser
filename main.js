@@ -18,6 +18,13 @@ var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
+var enterMin = document.querySelector('#min-range-error');
+var enterMax = document.querySelector('#max-range-error');
+var showMe = document.querySelector('.show-me');
+var enterP1Name = document.querySelector('#p1-name-error');
+var enterP1Guess = document.querySelector('#p1-guess-error');
+var enterP2Name = document.querySelector('#p2-name-error');
+var enterP2Guess = document.querySelector('#p2-guess-error');
 
 
 gameStart();
@@ -51,14 +58,6 @@ function minCheck() {
     gameStart();
   }
 }
-  var enterMin = document.querySelector('#min-range-error');
-  var enterMax = document.querySelector('#max-range-error');
-  var showMe = document.querySelector('.show-me');
-  var enterP1Name = document.querySelector('#p1-name-error');
-  var enterP1Guess = document.querySelector('#p1-guess-error');
-  var enterP2Name = document.querySelector('#p2-name-error');
-  var enterP2Guess = document.querySelector('#p2-guess-error');
-debugger;
 
 function checkEmptyMin(){
   if (minRange.value == "" ) {
