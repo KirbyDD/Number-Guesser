@@ -21,12 +21,20 @@
           <h3 class="set-range">Set Range</h3>
           <div class="flex-wrapper">
             <div class="left-user-input">
-              <label class="min-range" for="min-range">Min Range</label>
+              <label class="min-range show-me" for="min-range">Min Range</label>
               <input type="number" class="range range-style-1" id="min-range">
+              <div>
+                <p class="error" id="min-range-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Min Range</p>
+              </div>
             </div>
             <div class="left-user-input">
               <label class="max-range" for="max-range">Max Range</label>
               <input type="number" class="range range-style-2" id="max-range">
+              <div>
+                <p class="error" id="max-range-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Max Range</p>
+              </div>
             </div>
           <button class="btn btn-update" type="button">Update</button>
           </div>
@@ -37,11 +45,19 @@
           <div class="flex-wrapper-two">
             <div class="left-name-input">
               <label class="input-name" for="player-one-name">Name</label>
-              <input type="text" id="player-one-name" class="input-name name-spacing">   
+              <input type="text" id="player-one-name" class="input-name name-spacing"> 
+              <div>
+                <p class="error" id="p1-name-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Name</p>
+              </div>  
             </div>
-            <div  class="">
+            <div>
               <label class="input-name" for="p1-input">Guess</label>
               <input type="number" id="p1-input" class="input-name">
+              <div>
+                <p class="error" id="p1-guess-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Guess</p>
+              </div> 
             </div>
           </div>
           <h3>Challenger 2</h3>
@@ -49,11 +65,19 @@
             <div class="left-name-input">
               <label class="input-name" for="player-two-name">Name</label>
               <input type="text"  id="player-two-name" class="input-name name-spacing">
+              <div>
+                <p class="error" id="p2-name-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Name</p>
+              </div>
            </div>
-            <div class="">
+            <div class="left-name-input">
               <label class="input-name" for="p2-input">Guess</label>
               <input type="number" id="p2-input" class="input-name">
+              <div>
+                <p class="error" id="p2-guess-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter guess</p>
             </div>
+          </div>
           </div>
             <button class="btn submit-btn" id="submit-btn">Submit Guess</button>
             <button class="btn reset-btn" id="reset-btn" disabled>Reset Game</button>
