@@ -282,7 +282,7 @@ article {
   background-color: #D0D2D3;
 }
 /*Medium Screens*/
-@media screen and (max-width: 1025px){k
+@media screen and (max-width: 1025px){
   section {
     width: 100%;
     margin: 0 auto;

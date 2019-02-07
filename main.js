@@ -25,6 +25,8 @@ var enterP1Name = document.querySelector('#p1-name-error');
 var enterP1Guess = document.querySelector('#p1-guess-error');
 var enterP2Name = document.querySelector('#p2-name-error');
 var enterP2Guess = document.querySelector('#p2-guess-error');
+var guessCount = 0;
+
 
 
 gameStart();
@@ -134,12 +136,15 @@ submitBtn.addEventListener('click', function(event) {
   checkEmptyName2();
   checkEmptyGuess2();
   outsideRange(event);
+  addGuess(event);
   if (pOneGuessInput.value > randNumber) {
     p1Results.innerText = 'That\'s too high!';
   } else if (pOneGuessInput.value < randNumber) {
     p1Results.innerText = 'That\'s too low!';
   } else {
     p1Results.innerText = "BOOM!";
+    createCardOne();
+    rangeChange();
   }
   event.preventDefault();
 
@@ -149,6 +154,8 @@ submitBtn.addEventListener('click', function(event) {
     p2Results.innerText = 'That\'s too low!';
   } else {
     p2Results.innerText = "BOOM!";
+    createCardTwo();
+    rangeChange();
   }
 
   event.preventDefault();
@@ -193,10 +200,80 @@ function outsideRange(event){
     assignOutput();
 }
 
- function assignOutput(){
+function assignOutput(){
     pOneGuessOutput.innerText = pOneGuessInput.value;
     pOneScoreName.innerText = pOneName.value;
     pTwoGuessOutput.innerText = pTwoGuessInput.value;
     pTwoScoreName.innerText = pTwoName.value;
   }
+}
+
+function createCardOne(){
+  var sectionTwo = document.querySelector('.sec2')
+
+        sectionTwo.innerHTML += 
+          `<article class="score-box-container">
+          <div class="score-box">
+            <h5 class="winner-name">${pOneName.value}</h5> 
+            <p class="vs">vs</p> 
+            <h5 class="winner-name">${pTwoName.value}</h5>
+          </div>
+          <div class="score-box-name">
+            <h4 class="winner-display">${pOneName.value}</h4>
+            <p class="winner-name">Winner</p> 
+          </div>
+          <div class="score-box-bot">
+            <p class="score-bot-style"><span class="span-spacing" id="guess-count">43</span>Guesses</p>
+            <p class="score-bot-style score-bot-style2"><span class="span-spacing" id="time">1.5</span>Minutes</p>
+            <i class="fas fa-times-circle"></i>
+          </div>
+        </article>`        
+}
+
+function createCardTwo(){
+  var sectionTwo = document.querySelector('.sec2')
+
+        sectionTwo.innerHTML += 
+          `<article class="score-box-container">
+          <div class="score-box">
+            <h5 class="winner-name">${pOneName.value}</h5> 
+            <p class="vs">vs</p> 
+            <h5 class="winner-name">${pTwoName.value}</h5>
+          </div>
+          <div class="score-box-name">
+            <h4 class="winner-display">${pTwoName.value}</h4>
+            <p class="winner-name">Winner</p> 
+          </div>
+          <div class="score-box-bot">
+            <p class="score-bot-style"><span class="span-spacing" id="guess-count">${guessCount}</span>Guesses</p>
+            <p class="score-bot-style score-bot-style2"><span class="span-spacing" id="time">1.5</span>Minutes</p>
+            <i class="fas fa-times-circle"></i>
+          </div>
+        </article>`        
+}
+
+function rangeChange(){
+  minRange.value = parseInt(minRange.value) - 10;
+  maxRange.value = parseInt(maxRange.value) + 10;
+  lowEnd.innerText = minRange.value;
+  highEnd.innerText = maxRange.value;
+  randGen();
+  guessCount = 0;
+}
+
+var sectionTwo = document.querySelector('.sec2')
+
+sectionTwo.addEventListener('click', deleteCard);
+
+function deleteCard(event){
+  console.log(event.target);
+  if(event.target.classList.contains('fas')){
+    event.target.parentElement.parentElement.remove();
+  }
+
+}
+
+function addGuess(){
+  guessCount += 2;
+
 }
