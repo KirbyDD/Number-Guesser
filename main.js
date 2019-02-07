@@ -123,8 +123,8 @@ guessForm.addEventListener('keyup', function(){
 
 resetBtn.addEventListener('click', function(event) {
   randGen();
-  !pOneGuessInput.value;
-  !pTwoGuessInput.value;
+  pOneGuessInput.value = '';
+  pTwoGuessInput.value = '';
   event.preventDefault();
   resetBtn.disabled = true;
 })
@@ -166,10 +166,10 @@ guessForm.addEventListener('keyup', function(){
 })
 
 clearBtn.addEventListener('click', function(){
-  pOneName.value == '';
-  pTwoName.value == '' ;
-  pOneGuessInput.value == '';
-  pTwoGuessInput.value == '';
+  pOneName.value = '';
+  pTwoName.value = '';
+  pOneGuessInput.value = '';
+  pTwoGuessInput.value = '';
   pOneGuessOutput.innerText = '-';
   pTwoGuessOutput.innerText = '-';
   pOneScoreName.innerText = 'Challenger 1';
@@ -223,7 +223,7 @@ function createCardOne(){
             <p class="winner-name">Winner</p> 
           </div>
           <div class="score-box-bot">
-            <p class="score-bot-style"><span class="span-spacing" id="guess-count">43</span>Guesses</p>
+            <p class="score-bot-style"><span class="span-spacing" id="guess-count">${guessCount}</span>Guesses</p>
             <p class="score-bot-style score-bot-style2"><span class="span-spacing" id="time">1.5</span>Minutes</p>
             <i class="fas fa-times-circle"></i>
           </div>
