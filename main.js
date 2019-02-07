@@ -18,6 +18,7 @@ var randNumber;
 var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
+var guessCount = 0;
 
 gameStart();
 randGen();
@@ -81,8 +82,8 @@ resetBtn.addEventListener('click', function(event) {
 
 
 submitBtn.addEventListener('click', function(event) {
-
   outsideRange(event);
+  addGuess(event);
   if (pOneGuessInput.value > randNumber) {
     p1Results.innerText = 'That\'s too high!';
   } else if (pOneGuessInput.value < randNumber) {
@@ -191,7 +192,7 @@ function createCardTwo(){
             <p class="winner-name">Winner</p> 
           </div>
           <div class="score-box-bot">
-            <p class="score-bot-style"><span class="span-spacing" id="guess-count">43</span>Guesses</p>
+            <p class="score-bot-style"><span class="span-spacing" id="guess-count">${guessCount}</span>Guesses</p>
             <p class="score-bot-style score-bot-style2"><span class="span-spacing" id="time">1.5</span>Minutes</p>
             <i class="fas fa-times-circle"></i>
           </div>
@@ -204,4 +205,21 @@ function rangeChange(){
   lowEnd.innerText = minRange.value;
   highEnd.innerText = maxRange.value;
   randGen();
+  guessCount = 0;
+}
+
+var sectionTwo = document.querySelector('.sec2')
+
+sectionTwo.addEventListener('click', deleteCard);
+
+function deleteCard(event){
+  console.log(event.target);
+  if(event.target.classList.contains('fas')){
+    event.target.parentElement.parentElement.remove();
+  }
+
+}
+
+function addGuess(){
+  guessCount += 2;
 }
