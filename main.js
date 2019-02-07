@@ -19,6 +19,7 @@ var resetBtn = document.querySelector('#reset-btn');
 var guessForm = document.querySelector('#guess-form');
 var clearBtn = document.querySelector('#js-clear-btn');
 
+
 gameStart();
 randGen();
 
@@ -50,17 +51,65 @@ function minCheck() {
     gameStart();
   }
 }
+  var enterMin = document.querySelector('#min-range-error');
+  var enterMax = document.querySelector('#max-range-error');
+  var showMe = document.querySelector('.show-me');
+  var enterP1Name = document.querySelector('#p1-name-error');
+  var enterP1Guess = document.querySelector('#p1-guess-error');
+  var enterP2Name = document.querySelector('#p2-name-error');
+  var enterP2Guess = document.querySelector('#p2-guess-error');
+debugger;
 
-function checkUpdBtn () {
-  if (minRange.value == "" || maxRange.value == "") {
-    alert('Please fill min and max fields');
-  } else { 
-    minCheck();
+function checkEmptyMin(){
+  if (minRange.value == "" ) {
+  enterMin.classList.add('show-me');
+  } else {
+   enterMin.remove('show-me');
+  }
+}
+
+function checkEmptyMax(){
+ if (maxRange.value == "" ) {
+  enterMax.classList.add('show-me');
+} else {
+   enterMax.remove('show-me');
+ }
+}
+
+function checkEmptyName1(){
+  if (pOneName.value == "") {
+    enterP1Name.classList.add('show-me');
+  } else {
+    enterP1Name.remove('show-me');
+  }
+}
+function checkEmptyGuess1() {
+  if (pOneGuessInput.value == "") {
+    enterP1Guess.classList.add('show-me');
+  } else {
+    enterP1Guess.remove('show-me');
+  }
+}
+function checkEmptyName2(){
+  if (pTwoName.value == "") {
+    enterP2Name.classList.add('show-me');
+  } else {
+    enterP2Name.remove('show-me');
+  }
+}
+function checkEmptyGuess2() {
+  if (pTwoGuessInput.value == "") {
+    enterP2Guess.classList.add('show-me');
+  }
+  else {
+    enterP2Guess.remove('show-me');
   }
 }
 
 updateBtn.addEventListener('click', function(event) {
-  checkUpdBtn();
+  checkEmptyMax();
+  checkEmptyMin();
+  minCheck()
   lowEnd.innerText = minRange.value;
   highEnd.innerText = maxRange.value;
   randGen();
@@ -73,14 +122,18 @@ guessForm.addEventListener('keyup', function(){
 
 resetBtn.addEventListener('click', function(event) {
   randGen();
-  pOneGuessInput.value = "";
-  pTwoGuessInput.value = "";
+  !pOneGuessInput.value;
+  !pTwoGuessInput.value;
   event.preventDefault();
   resetBtn.disabled = true;
 })
 
 
 submitBtn.addEventListener('click', function(event) {
+  checkEmptyName1();
+  checkEmptyGuess1();
+  checkEmptyName2();
+  checkEmptyGuess2();
   outsideRange(event);
   if (pOneGuessInput.value > randNumber) {
     p1Results.innerText = 'That\'s too high!';
@@ -107,10 +160,10 @@ guessForm.addEventListener('keyup', function(){
 })
 
 clearBtn.addEventListener('click', function(){
-  pOneName.value = '';
-  pTwoName.value = '';
-  pOneGuessInput.value = '';
-  pTwoGuessInput.value = '';
+  pOneName.value == '';
+  pTwoName.value == '' ;
+  pOneGuessInput.value == '';
+  pTwoGuessInput.value == '';
   pOneGuessOutput.innerText = '-';
   pTwoGuessOutput.innerText = '-';
   pOneScoreName.innerText = 'Challenger 1';
@@ -148,4 +201,3 @@ function outsideRange(event){
     pTwoScoreName.innerText = pTwoName.value;
   }
 }
-

@@ -65,11 +65,19 @@
             <div class="left-name-input">
               <label class="input-name" for="player-two-name">Name</label>
               <input type="text"  id="player-two-name" class="input-name name-spacing">
+              <div>
+                <p class="error" id="p2-name-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter Name</p>
+              </div>
            </div>
-            <div class="">
+            <div class="left-name-input">
               <label class="input-name" for="p2-input">Guess</label>
               <input type="number" id="p2-input" class="input-name">
+              <div>
+                <p class="error" id="p2-guess-error">
+                <i class="fas fa-exclamation-triangle"></i>Enter guess</p>
             </div>
+          </div>
           </div>
             <button class="btn submit-btn" id="submit-btn">Submit Guess</button>
             <button class="btn reset-btn" id="reset-btn" disabled>Reset Game</button>
